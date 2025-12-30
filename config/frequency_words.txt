@@ -78,6 +78,11 @@ ipad
 mac
 ios
 
+openai
+chatgpt
+
+nvidia
+
 ai
 !gai
 人工智能
