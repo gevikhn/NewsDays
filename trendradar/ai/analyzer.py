@@ -373,7 +373,6 @@ class AIAnalyzer:
             "model": self.model,
             "messages": messages,
             "temperature": 1.0,
-            "max_tokens": 2000,
         }
 
         print(f"Request URL: {url}")
@@ -425,7 +424,7 @@ class AIAnalyzer:
         payload = {
             "contents": contents,
             "generationConfig": {
-                "temperature": 1.0,
+                "temperature": 0.7,
                 "maxOutputTokens": 2000,
             }
         }
