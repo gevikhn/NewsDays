@@ -372,9 +372,12 @@ class AIAnalyzer:
         payload = {
             "model": self.model,
             "messages": messages,
-            "temperature": 0.7,
+            "temperature": 1.0,
             "max_tokens": 2000,
         }
+
+        print(f"Request URL: {url}")
+        print(f"Request Payload: {json.dumps(payload, ensure_ascii=False)}")
 
         response = requests.post(
             url,
@@ -382,6 +385,10 @@ class AIAnalyzer:
             json=payload,
             timeout=self.timeout,
         )
+
+        print(f"Response Status: {response.status_code}")
+        print(f"Response Text: {response.text}")
+
         response.raise_for_status()
 
         data = response.json()
@@ -418,10 +425,13 @@ class AIAnalyzer:
         payload = {
             "contents": contents,
             "generationConfig": {
-                "temperature": 0.7,
+                "temperature": 1.0,
                 "maxOutputTokens": 2000,
             }
         }
+
+        print(f"Request URL: {url}")
+        print(f"Request Payload: {json.dumps(payload, ensure_ascii=False)}")
 
         response = requests.post(
             url,
@@ -429,6 +439,10 @@ class AIAnalyzer:
             json=payload,
             timeout=self.timeout,
         )
+        
+        print(f"Response Status: {response.status_code}")
+        print(f"Response Text: {response.text}")
+
         response.raise_for_status()
 
         data = response.json()
